@@ -5,7 +5,9 @@ package be.scrumdilicious.blogOpdracht.data;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "post")
@@ -18,10 +20,14 @@ public class Post {
     private String caption;
     private Integer likes;
 
+    @Column
+    @ElementCollection(targetClass = String.class)
+    private Set<String> likedUsers = new HashSet<>();
     @ManyToOne(fetch = FetchType.LAZY)
     private User user;
-    @Column(updatable = false)
+    @OneToMany(cascade = CascadeType.REFRESH, fetch = FetchType.EAGER, mappedBy = "post", orphanRemoval = true)
     private List<Comment> comments = new ArrayList<>();
+    @Column(updatable = false)
     private LocalDateTime createdDate;
 
     @PrePersist
@@ -82,6 +88,7 @@ public class Post {
         this.user = user;
     }
 
+
     public List<Comment> getComments() {
         return comments;
     }
@@ -89,6 +96,8 @@ public class Post {
     public void setComments(List<Comment> comments) {
         this.comments = comments;
     }
+
+
 
     public LocalDateTime getCreatedDate() {
         return createdDate;

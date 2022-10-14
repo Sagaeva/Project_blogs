@@ -4,6 +4,7 @@ import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
+@Table(name = "comments")
 public class Comment {
 
     @Id
@@ -28,9 +29,9 @@ public class Comment {
     public Comment() {
     }
 
-    public Comment(Post post, String userName, Long userId, String message, LocalDateTime createdDate) {
+    public Comment(Post post, String username, Long userId, String message, LocalDateTime createdDate) {
         this.post = post;
-        this.username = userName;
+        this.username = username;
         this.userId = userId;
         this.message = message;
         this.createdDate = createdDate;
@@ -56,8 +57,8 @@ public class Comment {
         return username;
     }
 
-    public void setUserName(String userName) {
-        this.username = userName;
+    public void setUserName(String username) {
+        this.username = username;
     }
 
     public Long getUserId() {
@@ -89,7 +90,7 @@ public class Comment {
         return "Comment{"+
                 "Id="+Id+
                 ", post="+post+
-                ", userName='"+username+'\''+
+                ", username='"+username+'\''+
                 ", userId="+userId+
                 ", message='"+message+'\''+
                 ", createdDate="+createdDate+
