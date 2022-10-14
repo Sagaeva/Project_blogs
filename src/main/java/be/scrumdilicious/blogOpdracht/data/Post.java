@@ -32,11 +32,13 @@ public class Post {
     public Post() {
     }
 
-    public Post(String title, String caption, Integer likes, User user, LocalDateTime createdDate) {
+    public Post(String title, String caption, Integer likes, User user,
+                List<Comment> comments, LocalDateTime createdDate) {
         this.title = title;
         this.caption = caption;
         this.likes = likes;
         this.user = user;
+        this.comments = comments;
         this.createdDate = createdDate;
     }
 
@@ -80,6 +82,14 @@ public class Post {
         this.user = user;
     }
 
+    public List<Comment> getComments() {
+        return comments;
+    }
+
+    public void setComments(List<Comment> comments) {
+        this.comments = comments;
+    }
+
     public LocalDateTime getCreatedDate() {
         return createdDate;
     }
@@ -96,6 +106,7 @@ public class Post {
                 ", caption='"+caption+'\''+
                 ", likes="+likes+
                 ", user="+user+
+                ", comments="+comments+
                 ", createdDate="+createdDate+
                 '}';
     }

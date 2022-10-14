@@ -12,7 +12,7 @@ public class Comment {
     @ManyToOne(fetch = FetchType.EAGER)
     private Post post;
     @Column(nullable = false)
-    private String userName;
+    private String username;
     @Column(nullable = false)
     private Long userId;
     @Column(columnDefinition = "text", nullable = false)
@@ -30,7 +30,7 @@ public class Comment {
 
     public Comment(Post post, String userName, Long userId, String message, LocalDateTime createdDate) {
         this.post = post;
-        this.userName = userName;
+        this.username = userName;
         this.userId = userId;
         this.message = message;
         this.createdDate = createdDate;
@@ -53,11 +53,11 @@ public class Comment {
     }
 
     public String getUserName() {
-        return userName;
+        return username;
     }
 
     public void setUserName(String userName) {
-        this.userName = userName;
+        this.username = userName;
     }
 
     public Long getUserId() {
@@ -89,7 +89,7 @@ public class Comment {
         return "Comment{"+
                 "Id="+Id+
                 ", post="+post+
-                ", userName='"+userName+'\''+
+                ", userName='"+username+'\''+
                 ", userId="+userId+
                 ", message='"+message+'\''+
                 ", createdDate="+createdDate+
