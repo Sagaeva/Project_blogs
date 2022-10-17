@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>users</title>
+
+    <h2>USERS</h2>
+</head>
+<body>
+
+<!--
+<form method= "post" th:object = "${user}" th:action = @{/addUser}>
+    <label>USERNAME</label>
+    <input type="text" name="name" th:text = *{user.name}><br>
+    <label>PASSWORD</label>
+    <input type="text" name="passWord" th:text = *{passWord}><br>
+    <label>FIRST NAME</label>
+    <input type="text" name="firstName" th:text = *{firstName}><br>
+    <label>LAST NAME</label>
+    <input type="text" name="lastName" th:text = *{lastName}><br>
+    <label>COURSE</label>
+    <select class="form-control" th:field="*{course.courseName}">
+        <option value="">Choose...</option>
+        <option value="Java">Java</option>
+        <option value="C#">C#</option>
+
+    </select>
+
+
+    <input type="submit" value="create">
+    -->
+
+
+</form>
+
+<form method="post" th:object = ${user} th:action = @{/addUser}>
+    <label>USERNAME</label>
+    <input type="text" name="name" th:text = ${name}><br>
+    <label>PASSWORD</label>
+    <input type="text" name="password" th:text = ${password}><br>
+    <label>FIRST NAME</label>
+    <input type="text" name="username" th:text = ${username}><br>
+    <label>LAST NAME</label>
+    <input type="text" name="lastname" th:text = ${lastname}><br>
+    <label>EMAIL</label>
+    <input type="email" name="email" th:text = ${email}><br>
+    <label>STREET</label>
+    <input type="text" name="street" th:text = ${street}><br>
+    <label>house N</label>
+    <input type="number" name="houseN" th:text = ${houseN}><br>
+    <label>CITY</label>
+    <input type="text" name="city" th:text = ${city}><br>
+    <label>ZIP</label>
+    <input type="text" name="zip" th:text = ${zip}><br>
+
+
+
+
+
+    <input type="submit" value="create">
+
+
+</form>
+
+
+<!--
+
+Set<ERole> role, List<Post> posts, LocalDateTime createdDate
+
+
+-->
+
+</body>
+</html>

@@ -1,7 +1,11 @@
+/*
+
+
 package be.scrumdilicious.blogOpdracht.services;
 
 import be.scrumdilicious.blogOpdracht.data.User;
 import be.scrumdilicious.blogOpdracht.repository.UserRepository;
+import be.scrumdilicious.blogOpdracht.security.UserDetailsClass;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -26,12 +30,24 @@ public class UserDetailsServ implements UserDetailsService {
         if (user.isEmpty())
             throw new UsernameNotFoundException("User not found");
 
-        return new be.scrumdilicious.blogOpdracht.security.UserDetails(user.get());
+        return new UserDetailsClass(user.get());
 
 
     }
 
+
+
 }
+
+ */
+
+
+
+
+
+
+
+
 
 
 

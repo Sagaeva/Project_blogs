@@ -1,15 +1,17 @@
-package be.scrumdilicious.blogOpdracht.security;
+/*
 
+package be.scrumdilicious.blogOpdracht.security;
 import be.scrumdilicious.blogOpdracht.data.User;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
 
-public class UserDetails implements org.springframework.security.core.userdetails.UserDetails {
+public class UserDetailsClass implements UserDetails {
 
     private User user;
 
-    public UserDetails(User user) {
+    public UserDetailsClass(User user) {
         this.user = user;
     }
 
@@ -52,3 +54,10 @@ public class UserDetails implements org.springframework.security.core.userdetail
         return this.user;
     }
 }
+
+ */
+
+
+
+
+

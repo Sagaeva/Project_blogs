@@ -22,7 +22,7 @@ public class User {
     private String name;
     @Column(unique = true, updatable = false)
     private String username;
-    @Column(nullable = false)
+    @Column(nullable = true)
     private String lastname;
     @Column(nullable = false, unique = true)
     private String email;
@@ -47,6 +47,20 @@ public class User {
     }
 
     public User() {
+
+    }
+
+    public User(String name, String username, String lastname, String email,
+                String password, String street, int houseN, String city, Long zip) {
+        this.name = name;
+        this.username = username;
+        this.lastname = lastname;
+        this.email = email;
+        this.password = password;
+        this.street = street;
+        this.houseN = houseN;
+        this.city = city;
+        this.zip = zip;
     }
 
     public User(String name, String username, String lastname, String email,
@@ -61,7 +75,7 @@ public class User {
         this.houseN = houseN;
         this.city = city;
         this.zip = zip;
-       // this.role = role;
+        this.role = role;
         this.posts = posts;
         this.createdDate = createdDate;
     }
