@@ -30,12 +30,15 @@ public class UserControllers {
         this.userService = userService;
     }
 
+
     @GetMapping("/test")
     public String showAll(){
 
 
         return "test";
     }
+
+
 
     /*
     @GetMapping("/showUserInfo")
